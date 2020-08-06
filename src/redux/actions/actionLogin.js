@@ -1,6 +1,6 @@
 import { LOGIN } from "../../constants/";
 
 export const actionLogin = (payload) => ({
-  LOGIN,
+  type: LOGIN,
   payload,
 });

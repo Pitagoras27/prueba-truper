@@ -1,14 +1,12 @@
 import { LOGIN } from "../constants";
 
-const INITIAL_STATE = {
-  user: "",
-};
+const INITIAL_STATE = {};
 
 const loginUser = (state = INITIAL_STATE, { type, payload }) => {
   if (LOGIN === type) {
     return {
       ...state,
-      user: payload.user,
+      user: payload,
     };
   }
 

@@ -2,7 +2,7 @@ import React from "react";
 
 const Form = ({ onSubmit, onChange }) => {
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <input
         type="email"
         id="email"
@@ -25,7 +25,6 @@ const Form = ({ onSubmit, onChange }) => {
         type="submit"
         value="Iniciar Sesión"
         className="btn btn-block bg-relevant"
-        onSubmit={onSubmit}
       >
         Inicia Sesión
       </button>

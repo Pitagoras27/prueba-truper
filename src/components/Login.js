@@ -4,25 +4,21 @@ import { actionLogin } from "../redux/actions/actionLogin";
 
 import Form from "./Form";
 
-const Login = () => {
-  const [user, setUser] = useState({
-    user: { email: "", password: "" },
-  });
+const Login = (props) => {
+  const [user, setUser] = useState({ email: "" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { actionLogin } = this.props;
+    const { actionLogin, history } = props;
     actionLogin(user);
-    // history.push("./");
+    history.push("./");
   };
 
   const handleChange = (e) => {
     setUser({
-      user: {
-        [e.target.name]: e.target.value,
-      },
+      ...user,
+      [e.target.name]: e.target.value,
     });
-    console.log(user);
   };
 
   return (
@@ -50,4 +46,3 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
-// export default Login;
